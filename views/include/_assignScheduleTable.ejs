@@ -1,0 +1,421 @@
+<div class="container mt-4">
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr class="bg-light-gray">
+                    <th class="text-uppercase">Hora</th>
+                    <th class="text-uppercase">Lunes</th>
+                    <th class="text-uppercase">Martes</th>
+                    <th class="text-uppercase">Miercoles</th>
+                    <th class="text-uppercase">Jueves</th>
+                    <th class="text-uppercase">Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle">7:00</td>
+                    <td>
+                	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+		       	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle">7:50</td>
+                    <td>
+                	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+
+                    </td>
+                    <td class="bg-light-gray">
+			<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+				<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+				<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+				<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-middle">8:40</td>
+                    <td>
+                       	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                        	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                        	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                        	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+                        	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="align-middle">9:30</td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="align-middle">10:20</td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>	
+		    <select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="align-middle">11:10</td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="align-middle">12:50</td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="align-middle">13:40</td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="align-middle">14:30</td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td class="bg-light-gray">
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+                    <td>
+	<select class="form-select" id="hourSelect" name="hourSelect" onchange=update_list()>
+					<option value="">Libre</option>
+				<% for(var i=0; i< classrooms.length; i++){ %>	
+					<option value="<%= classrooms[i].subject%>"> <%= classrooms[i].subject%></option>
+				<% } %>
+			</select>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+	<button class="btn btn-primary">Asignar horario</button>
+    </div>
+</div>

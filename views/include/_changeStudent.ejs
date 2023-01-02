@@ -1,0 +1,40 @@
+<div class="container ">
+	<div class="card mt-5">
+		<div class="card-body">
+		<h4 class="card-title">Cambiar alumnos</h4>
+      		<form action="api/groups/assignStudent" method="POST">
+			<div class="form-group">
+				<label for="exampleFormControlSelect1"> Alumno </label>
+
+				<div class="input-group mb-3">
+					<select class="form-select" id="registerNumber" name="registerNumber">
+						<% for(var i=0; i< students.length; i++){ %>		
+							<%if(students[i].group!="1"){%>
+								<option value="<%= students[i].registerNumber%>" > <%= students[i].registerNumber%></option>
+							<%}%>
+						<% } %>
+					</select>
+				</div>
+				<label for="exampleFormControlSelect1">Grupo</label>
+
+            			<div class="input-group mb-3">
+					<select class="form-select"  id="groupSelector" name="group">	
+						<% for(var i=0; i< groups.length; i++){ %>		
+							<option value="<%= groups[i].group%>" > <%= groups[i].group%></option>
+						<% } %>
+					</select>
+				</div>
+            			
+
+				
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Cambiar</button>
+				</div>
+			</div>
+		</form>
+  		</div>
+	</div>
+</div>
+
+
+

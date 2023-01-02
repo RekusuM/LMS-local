@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	
+    	<title>LMS CETI</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/sidebars.css" rel="stylesheet">
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    </head>
+
+    <body>
+        <main class="d-flex flex-nowrap"> 
+            
+            <!--Content-->
+			<%- include('include/_navBarAdmin')%>
+			
+	    	<div class="container overflow-auto" >
+    <form action="api/assignSchedule" method="POST">
+
+						<select class="form-select mt-5" id="semesterSelector" name="semesterSelector" onchange=selectSemester()>	
+							<option value="" hidden>Elija un semestre</option>
+
+							<% for(var i=1; i<= 8; i++){ %>		
+							<option value="<%= i%>" > <%= i%></option>
+							<% } %>
+						</select>
+
+						<select class="form-select mt-5" id="groupSelector" onchange=test() name="group">	
+							<option value="" hidden>Elija un grupo</option>
+
+							<% for(var i=0; i< groups.length; i++){ %>		
+							<option value="<%= groups[i].group%>" id="groupSelector<%=i%>" hidden> <%= groups[i].group%></option>
+							<% } %>
+						</select>
+
+					<div id="tableDiv">
+						
+					</div>
+
+	</form>
+
+					<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+					  <div class="modal-dialog modal-dialog-centered">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					      </div>
+					      <div class="modal-body">
+					        Show a second modal and hide this one with the button below.
+					      </div>
+					      <div class="modal-footer">
+					        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+		</div>
+	    <script src="js/bootstrap.bundle.min.js"></script>  
+            <script src="js/sidebars.js"></script>
+
+	    <script>
+		let groupSelector = document.getElementById("groupSelector");
+		let semesterSelector = document.getElementById("semesterSelector");
+		//var myModal = new bootstrap.Modal('#exampleModalToggle', {});
+		//myModal.show();
+
+		function test(){
+			
+			const xhr = new XMLHttpRequest();
+			xhr.onload = () => {
+			  document.getElementById("tableDiv").innerHTML = "";
+			  document.getElementById("tableDiv").innerHTML = xhr.responseText;
+
+			}
+			xhr.open("GET", "/assignScheduleTable/"+groupSelector.value);
+			xhr.responseType = "text";
+			xhr.send();
+		}		
+
+		function selectSemester(){
+			let semester = semesterSelector.options[semesterSelector.selectedIndex].value;
+
+			for(let i=0;i<groupSelector.children.length-1;i++){
+				if(document.getElementById('groupSelector'+i).value.substring(0,1)==semester){
+					document.getElementById('groupSelector'+i).hidden = false	
+				}else{
+					document.getElementById('groupSelector'+i).hidden = true	
+				}
+			}
+		}
+	    </script>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr class="bg-light-gray">
+                    <th class="text-uppercase">Materia</th>
+                    <th class="text-uppercase">Primer Parcial</th>
+                    <th class="text-uppercase">Segundo Parcial</th>
+                    <th class="text-uppercase">Tercer Parcial</th>
+                    <th class="text-uppercase">Semestre</th>
+                </tr>
+            </thead>
+            <tbody>
+	    <%kardex.forEach((subject,i)=>{%>
+		<tr>
+			<%console.log(subject)%>
+			<td class="align-middle"><%=subject.subject[i].subject%></td>
+
+			<%for (let o = 0; o < kardex[i].partialGrades.length; o++) {%>
+				<td class="align-middle"><%=kardex[i].partialGrades[o].grade%></td>
+			<%}%>
+			
+			
+			<%if (kardex[i].finalGrade) {%>
+				<td class="align-middle"><%=kardex[i].finalGrade%></td>
+			<%}%>
+                </tr>
+
+		<%})%>
+            </tbody>
+        </table>
+    </div>
+</div>

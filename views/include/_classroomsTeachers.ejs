@@ -1,0 +1,12 @@
+<%publication.forEach(publication =>{%>
+	<div class="card mt-4">
+		<div class="card-body">
+				<h4 class="card-title"><%= publication.subject %> <%= publication.group %></h4>
+				<div class="card-subtitle text-muted mb-2"><%= publication.teacher %></div>
+			<form action="/publicationsTeachers" method="GET">
+				<input type = "hidden" name = "publicationId" value =<%= publication._id %> />
+                        	<button type="submit" class="btn btn-primary">Revisar</button>
+			</form>
+		</div>
+	</div>
+<%})%>

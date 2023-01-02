@@ -1,0 +1,46 @@
+<div class="container ">
+	<div class="card mt-5">
+		<div class="card-body">
+		<h4 class="card-title">Asignar maestro a grupo</h4>
+      		<form action="api/classrooms" method="POST">
+			<div class="form-group">
+				
+				<label for="exampleFormControlSelect1">Grupo</label>
+
+            			<div class="input-group mb-3">
+					<select class="form-select " id="groupSelector" name="group">	
+						<% for(var i=0; i< groups.length; i++){ %>		
+							<option value="<%= groups[i].group%>" > <%= groups[i].group%></option>
+						<% } %>
+					</select>
+				</div>
+            			
+				<label for="exampleFormControlSelect1">Profesores</label>
+
+				<div class="input-group mb-3">
+					<select class="form-select" id="teacherId" name="teacher">
+						<% for(var i=0; i< teachers.length; i++){ %>		
+							<option value="<%= teachers[i]._id%>" > <%= teachers[i].username%></option>
+						<% } %>
+					</select>
+				</div>
+
+				<label for="exampleFormControlSelect1">Materia</label>
+
+				<div class="input-group mb-3">
+					<select class="form-select" id="subject" name="subject">
+						<% for(var i=0; i< subjects.length; i++){ %>		
+							<option value="<%= subjects[i].name%>" > <%= subjects[i].name%></option>
+						<% } %>
+					</select>
+				</div>
+
+
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Agregar a grupo</button>
+				</div>
+			</div>
+		</form>
+  		</div>
+	</div>
+</div>

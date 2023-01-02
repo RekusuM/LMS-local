@@ -1,0 +1,74 @@
+<div class="card mt-4">
+	<div class="card-body">
+		<div class="container">
+
+			
+		<div class="row align-items-start">
+        		<form action="api/assignment/grade" method="POST" class="row align-items-start" id="gradeForm">
+			
+				<div class="col">
+        				<select class="form-select" id="userSelector" onchange=test() name="register">
+						
+						<option value="" hidden>Seleccione un usuario</option>
+
+						<% for(var i=0; i< filesAndUsers.length; i++){ %>	
+								
+								<% if(filesAndUsers[i].graded==false){ %>	
+									<option value="<%= filesAndUsers[i].register%>" > <%= filesAndUsers[i].register%></option>
+								<% } %>
+						<% } %>
+					</select>
+        		 	</div>
+			
+				<div class="col">	
+							
+						<% for(var i=0; i< criteria.criteria.length; i++){ %>	
+
+								<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text"><%= criteria.criteria[i].criteria%></span>
+								  </div>
+								  <input type="number" class="form-control" id="grade" name="grade">
+								  <div class="input-group-append">
+								    <span class="input-group-text">/<%= criteria.criteria[i].weight%></span>
+								  </div>
+								</div>
+
+						<% } %>
+
+        		 	</div>
+					<%if(filesAndUsers){%>	
+					<input type="hidden" id="idAssignment" name="assignment" value="<%= filesAndUsers[0].class %>">
+					<%}%>
+			</form>
+				<div class="col" id="tableHW">	
+
+        		 	</div>
+							
+        	</div>
+
+					<div class="col-12 ">
+ 	   						<button type="submit"  class="btn btn-primary offset-md-11" form="gradeForm">Entregar</button>
+        				</div>
+        	</div>
+	</div>
+</div>
+   <script>
+		let userSelector = document.getElementById("userSelector");
+		const params = new URLSearchParams(window.location.search)
+		const publicationId = params.get('publicationId')
+
+
+		function test(){
+			const xhr = new XMLHttpRequest();
+			xhr.onload = () => {
+			  document.getElementById("tableHW").innerHTML = "";
+			  document.getElementById("tableHW").innerHTML = xhr.responseText;
+			  console.log(xhr.responseText)
+			}
+			xhr.open("GET", "/checkHomeworkTable/"+userSelector.value+"/"+publicationId);
+			xhr.responseType = "text";
+			xhr.send();
+		}		
+
+   </script>

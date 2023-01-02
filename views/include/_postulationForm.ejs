@@ -1,0 +1,64 @@
+<div class="container ">
+  <div class="card mt-5">
+      <div class="card-body">
+    
+      <form class="row g-3" action="api/postulate" method="POST" enctype="multipart/form-data">
+
+        <div class="col-md-4">
+          <label for="inputTitle" class="form-label">Nombre/s</label>
+          <input type="text" class="form-control" id="firstname" name="firstname">
+        </div>
+
+        <div class="col-md-8">
+          <label for="inputTitle" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="lastname" name="lastname">
+        </div>
+
+        <div class="col-md-12">
+          <label for="inputTitle" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="email" name="email">
+        </div>
+
+        <div class="col-2">
+          <label for="startDate" class="form-label">Fecha de nacimiento</label>
+          <input id="startDate" class="form-control" type="date" name="birthday">
+        </div>
+          
+        <div class="col-12">
+          <label for="startDate" class="form-label">Certificado de secundaria</label>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="schoolCert" name="schoolCert">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="startDate" class="form-label">Certificado de nacimiento</label>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="birthdayCert" name="birthdayCert">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="startDate" class="form-label">Curp</label>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="curp" name="curp">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="startDate" class="form-label">Antidoping</label>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="antidoping" name="antidoping">
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Postularse</button>
+        </div>
+
+      </form>
+      
+    </div>
+  </div>
+</div>

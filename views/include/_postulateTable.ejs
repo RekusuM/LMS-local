@@ -1,0 +1,68 @@
+	<div class="container overflow-auto">
+		        <!-- form handling -->
+		        <table class="table table-hover">
+		        	<thead>
+				  		<tr>
+		                    			<th scope="col">Nombre</th>
+		                  			<th scope="col">Apellido</th>
+		                   			<th scope="col">Correo</th>
+		                   			<th scope="col">Nacimiento</th>
+		                    			<th scope="col">CURP</th>
+		                  			<th scope="col">Antidopaje</th>
+		                   			<th scope="col">Cert. Secundaria</th>
+		                   			<th scope="col">Cert. Nacimiento</th>
+							<th scope="col">Aceptar</th>
+		
+						</tr>
+		                </thead>
+		                
+		
+				<tbody>
+					<% for(var i=0; i< postulates.length; i++){ %>			
+			        	        	<tr>
+								<form action="/api/postulateRevision" method="POST" class="table-responsive" id="form1">
+								<td><input type="text" value="<%= postulates[i].firstname %>" readonly="readonly" name="firstname"/></td>
+			       		             		<td><%= postulates[i].lastname %></td>
+			                    			<td><input type="text" value="<%= postulates[i].email %>" readonly="readonly" name="email"/></td>
+			                	    		<td><input type="text" value="<%= postulates[i].birthday.substring(0,10) %>" readonly="readonly" name="birthday" /></td>
+					  			</form>
+								<td>
+									<form action="/api/postulate/curp/<%= postulates[i]._id %>" method="GET" class="table-responsive" id="formCurp">
+										<button class="btn btn-primary" type="submit" form="formCurp">
+											<i class="bi bi-download"></i>								
+										</button>
+									</form>
+								</td>
+								<td>
+									<form action="/api/postulate/antidoping/<%= postulates[i]._id %>" method="GET" class="table-responsive" id="formAntidoping">
+										<button class="btn btn-primary" type="submit" form="formAntidoping">
+											<i class="bi bi-download"></i>								
+										</button>
+					  				</form>
+								</td>
+								<td>
+									<form action="/api/postulate/highschoolCertificate/<%= postulates[i]._id %>" method="GET" class="table-responsive" id="formCertHighSchool">
+										<button class="btn btn-primary" type="submit"form="formCertHighSchool">
+											<i class="bi bi-download"></i>								
+										</button>
+					  				</form>
+								</td>
+								<td>
+									<form action="/api/postulate/birthdayCertificate/<%= postulates[i]._id %>" method="GET" class="table-responsive" id="formCertBirthday">
+										<button class="btn btn-primary" type="submit"form="formCertBirthday">	
+											<i class="bi bi-download"></i>								
+										</button>
+					  				</form>
+								</td>
+								<td>
+									<button type="submit" class="btn btn-success" form="form1">
+										<i class="bi bi-check"></i>		
+									</button>
+								</td>
+							</tr>
+					<% } %>
+		                </tbody>
+			</table>
+
+		</div>
+

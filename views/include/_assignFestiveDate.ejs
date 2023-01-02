@@ -1,0 +1,37 @@
+<div class="container ">
+	<div class="card mt-5">
+		<div class="card-body">
+		<h4 class="card-title">Asignar fecha festiva</h4>
+      		<form action="api/timeAssignment/festiveDate" method="POST">
+			<div class="form-group">
+
+				  <div class="input-group mb-3">
+				    <input type="text" class="form-control" placeholder="Nombre de la fecha" name="event" required>
+				  </div>
+				  
+				  <label for="startDate" class="form-label">Fecha</label>
+			          <div class="input-group mb-3 col-3">
+			            <input id="FestiveDay" class="form-control" type="date" name="date"/>
+			          </div>
+
+
+				  <label for="startDate" class="form-label">Color</label>
+			          <div class="input-group mb-3 col-3">
+				  <select class="form-select" id="color" name="color">
+				    <option value="green">Verde</option>
+				    <option value="yellow">Amarillo</option>
+				    <option value="blue">azul</option>
+				    <option value="norange">naranja</option>
+				  </select>
+			          </div>
+
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Asignar</button>
+				</div>
+			</div>
+		</form>
+  		</div>
+	</div>
+</div>
+
+

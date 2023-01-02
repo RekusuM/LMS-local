@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+ <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+ <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>  
+ <script src="/js/videocallScript.js" defer></script>
+ <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+  <title>CETI</title>
+  <style>
+    #video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-auto-rows: 300px;
+    }
+    
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius:25px
+    }
+  </style>
+</head>
+<body>
+
+	<div class="position-relative">
+    
+    <input type="hidden" id="username" value="<%=user%>" />
+	  <div id="video-grid"></div>
+    <div class="fixed-bottom">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body" >
+          <p id="toast-text"></p> 
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" id="video"><i class="bi bi-camera-video"></i></button>
+        <button type="button" class="btn btn-primary" id="audio"><i class="bi bi-mic"></i></button>
+        <button type="button" class="btn btn-primary" id="raise-hand"><i class="bi bi-hand-index"></i></button>
+      </div>
+    </div>
+    
+	</div>
+</body>
+</html>

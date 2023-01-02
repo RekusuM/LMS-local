@@ -1,0 +1,113 @@
+<div class="card mt-4">
+	<div class="card-body">
+		<h4 class="card-title"><%= publication.title %></h4>
+		<div class="card-subtitle text-muted mb-2">
+
+
+			<div class="row align-items-start">
+				<div class="col">
+
+					<p>Fecha de publicacion: <%= publication.publicationDate.substring(0,10) %></p>
+					
+				</div>
+				<div class="col">
+					<%if(publication.assignation){%>
+						<p>Fecha de entrega: <%= publication.deliveryDate.substring(0,10) %></p>
+					<%}%>
+				</div>
+			</div>
+		</div>
+
+        	<p class="card-text"><%= publication.content %></p>
+
+		<%publication.files.forEach(function(files,index){%>
+
+			<div class="input-group mb-3 col-3">
+			<form action="/api/publication/files/<%= publication.files[index]._id %>" method="GET" >
+				<button class="btn btn-primary" type="submit">
+					<i class="bi bi-file-earmark-arrow-down"></i>
+				</button>
+			</form>
+			</div>	
+		<%})%>
+	
+		
+		<div class="container">
+			<div class="row align-items-start">
+				<div class="col">
+			
+					<%if(publication.assignation){%>
+						<p>Criterios:</p>
+						<%for(let count=0;count<=publication.criteria.length-1;count++){%>
+						
+							<div class="row ml-2">
+								<%=publication.criteria[count].criteria%>
+								<%=publication.criteria[count].weight%>
+
+							</div>
+						<%}%>
+
+					
+					<%}%>
+
+        	 		</div>
+						
+					<%if(homework){%>
+						<%if(homework.graded){%>
+							<div class="col">
+								<div class="card">
+  									<div class="card-body">
+   										 Calificacion: <%= homework.grade%>
+									  </div>
+								</div>	  
+							</div>
+						
+						<%}else{%>
+							<div class="col">
+								<div class="card">
+  									<div class="card-body">
+   										Su tarea aun no ha sido calificada 
+									  </div>
+								</div>	  
+							</div>
+					
+						<%}%>
+					<%}%>
+					<%if(publication.assignation){%>
+
+						<%if(!homework){%>
+						<div class="col">
+        					<form action="api/assignment" method="POST" enctype="multipart/form-data" class="row g-3" id="assignment">
+		        				<div class="col-12">
+		        					<div class="input-group mb-3">
+		        						<input type="file" class="form-control" id="inputGroupFile01" name="files" multiple>
+		        					</div>
+		        				</div>
+	          				</div>
+        	
+						<%}%>
+					<%}%>
+
+					<%if(publication.ytLink){%>
+							<div class="embed-responsive embed-responsive-21by9">
+ 								<iframe width="560" height="315" class="embed-responsive-item" src="<%=publication.ytLink%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+								</iframe>
+							</div>
+					<%}%>
+			
+					<input type="hidden" id="idAssignment" name="assignment" value="<%= publication._id%>">
+
+					<%if(publication.assignation){%>
+						<%if(!homework){%>
+							
+								<div class="col-12 ">
+ 	   								<button type="submit" id="createPublication" class="btn btn-primary offset-md-11">Entregar</button>
+        						</div>
+						
+						<%}%>
+					<%}%>
+			</form>
+			</div>
+        	</div>
+	</div>
+</div>

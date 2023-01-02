@@ -1,0 +1,185 @@
+<div class="container ">
+    <div class="card mt-5">
+      <div class="card-body">
+    
+        <form action="api/publication" method="POST" enctype="multipart/form-data" class="row g-3" id="assignment">
+        	<div class="row">
+	  		<div class="col-md-6 ">
+          		  <label for="inputTitle" class="form-label">Titulo</label>
+          		  <input type="text" class="form-control" id="title" name="title" required>
+          		</div>
+          
+          	
+			
+			<div class="col-3 ">
+          			<label for="inputTitle" class="form-label">Ponderacion customizada</label>
+				<div class="input-group mb-3 col">
+				  <input type="number" class="form-control col-xs-2" id="ponderation" name="ponderation"disabled>
+				</div>
+			</div>
+
+		</div>
+
+          <div class="col-12">
+            <label for="inputDescription" class="form-label">Descripción</label>
+            <textarea class="form-control" aria-label="With textarea" name="content" maxlength="2000" required></textarea>
+          </div>
+
+          <div class="col-12">
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="inputGroupFile01" name="files" multiple>
+            </div>
+          </div>
+
+	 <div class="col-12">
+            <label for="inputYt" class="form-label">Link de youtube</label>
+            <input type="text" class="form-control"  name="ytLink" maxlength="100" >
+          </div>
+
+
+
+	<input type="hidden" id="idClass" name="class" value="">
+
+	
+	<!-- HOMEWORK SECTION-->
+          
+	  <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" name="assignation" value="false">
+             	<label class="form-check-label" for="gridCheck">
+                	Tarea
+              	</label>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <label for="startDate" class="form-label">Fecha de entrega</label>
+            <input id="startDate" class="form-control" type="date" name="deliveryDate" disabled/>
+          </div>
+          
+  <div class="col-md-4">
+            <label for="inputCategory" class="form-label">Categoria</label>	
+	    				<select class="form-select"  id="category" placeholder="agregue una categoria" name="category" disabled>
+						
+						<option value="" hidden>Seleccione un usuario</option>
+
+						<% if(categories){ %>	
+							<% for(var i=0; i< categories.ponderations.length; i++){ %>	
+								<option value="<%= categories.ponderations[i].name%>" ><%= categories.ponderations[i].name%></option>
+								
+							<% } %>
+						<% } %>
+					</select>
+
+          </div>
+
+          
+          <div class="col-12">
+            <button type="button" id="createCriteria" class="btn btn-secondary"  onclick="add_tag()" disabled>Agregar etiqueta</button>
+          </div>
+		
+			<div class="row justify-content-start">
+				<div class="col-2">
+	          		  <label for="criteria" class="form-label">Criterio</label>
+	          		  <input type="text" id="criteria0" name="criteria"class="form-control" required="required" disabled/>
+	          		</div>
+	          		<div class="col-md-2">
+	          		  <label for="inputWeight" class="form-label">Ponderacion</label>
+	          		  <input type="number" class="form-control" id="weight0" name="weight" min="1" max="100" required="required" disabled/>
+	          		</div>
+			</div>
+
+
+
+
+		<div class="col-12 ">
+		<button type="submit" id="createPublication" class="btn btn-primary offset-md-10">Publicar</button>
+		</div>
+
+    </form>
+
+		
+		<form action="api/ponderation" method="POST" class="row g-3" >
+       		   <div class="row">
+       		   	<div class="col-3">
+       		   	  <label for="startDate" class="form-label">Nombre de nueva categoria</label>
+       		   	  <input type="text" class="form-control" list="datalistcategory" placeholder="agregue una categoria" name="categoryCreateName">
+       		   	</div>
+       		   			
+
+  		   	<div class="col-md-4">
+       		   	  <label for="inputCategory" class="form-label">Categoria</label>
+       		   	  <input type="number"class="form-control" list="datalistcategory" name="categoryPonderation" >
+       		   	</div>
+
+
+				<input type="hidden" id="idClassroom" name="id" value="">
+       		</div>
+			<div class="col-12 ">
+		 	   <button type="submit" id="createPublication" class="btn btn-primary offset-md-10">Crear Categoria</button>
+		    </div>
+        </form>
+
+	
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const idClass = document.getElementById("idClass")
+		const id = document.getElementById("idClassroom")
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const idClassroom = urlParams.get('classroom')
+		idClass.value=idClassroom
+		id.value=idClassroom
+
+		console.log(idClassroom)
+	</script>
+
+	<script>
+		let counter=0
+		
+		document.getElementById('gridCheck').onclick = function() {
+    			document.getElementById('gridCheck').value=true	
+			document.getElementById('startDate').disabled = !this.checked;
+    			document.getElementById('createCriteria').disabled = !this.checked;
+			document.getElementById('category').disabled = !this.checked;
+		
+			document.getElementById('startDate').required = !this.required;
+    			document.getElementById('createCriteria').required = !this.required;
+			document.getElementById('category').required = !this.required;
+
+			document.getElementById('ponderation').disabled = !this.checked;
+
+
+				for(let count=0;count<=counter;count++){
+    					document.getElementById('criteria'+count).disabled = !this.checked;
+					document.getElementById('weight'+count).disabled = !this.checked;
+				}
+		};
+
+		function add_tag(){
+			
+			counter++
+
+			html=
+	  		'<div class="row justify-content-start">\
+				<div class="col-2">\
+	          		  <label for="criteria" class="form-label">Criterio</label>\
+	          		  <input type="text" id="criteria'+counter+'" name="criteria"class="form-control" required="required"/>\
+	          		</div>\
+	          		<div class="col-md-2">\
+	          		  <label for="inputWeight" class="form-label">Ponderacion</label>\
+	          		  <input type="number" class="form-control" id="weight'+counter+'" name="weight" min="1" max="100" required="required"/>\
+	          		</div>\
+			</div>'	
+			var form = document.getElementById('createPublication')
+			form.insertAdjacentHTML("beforebegin", html)
+
+		}
+
+
+
+
+	</script>
+</div>

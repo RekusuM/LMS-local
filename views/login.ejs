@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>LMS CETI</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+    <main class="form-signin w-100 m-auto">
+        <img class="mb-4" src="img/ceti_logo.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 fw-normal">Bienvenido</h1>
+
+      <form action="api/login" method="POST">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="registerNumber" name="registerNumber">
+          <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+      
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+      </form>
+        <div class="checkbox mb-3">
+ 		<a href="/postulationForm">Postularse</a> 
+        </div>
+  </main>
+
+
+    
+  </body>
+</html>

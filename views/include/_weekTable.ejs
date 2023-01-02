@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr class="bg-light-gray">
+                    <th class="text-uppercase">Hora</th>
+                    <th class="text-uppercase">Lunes</th>
+                    <th class="text-uppercase">Martes</th>
+                    <th class="text-uppercase">Miercoles</th>
+                    <th class="text-uppercase">Jueves</th>
+                    <th class="text-uppercase">Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+			<td class="align-middle">7:00</td>
+
+			<% for(var i=0; i< 5; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> "><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+
+
+                </tr>
+
+                <tr>
+                    <td class="align-middle">7:50</td>
+                    	<% for(var i=5; i< 10; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> "><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+                </tr>
+
+                <tr>
+                    <td class="align-middle">8:40</td>
+                   	<% for(var i=10; i< 15; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+                </tr>
+
+                <tr>
+                    <td class="align-middle">9:30</td>
+                 	<% for(var i=15; i< 20; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+
+                </tr>
+
+                <tr>
+                    <td class="align-middle">10:20</td>
+                   	<% for(var i=20; i< 25; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+                </tr>
+
+                <tr>
+                    <td class="align-middle">11:10</td>
+                	<% for(var i=25; i< 30; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+
+                </tr>
+                <tr>
+                    <td class="align-middle">12:50</td>
+                   	<% for(var i=30; i< 35; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+
+                </tr>
+                <tr>
+                    <td class="align-middle">13:40</td>
+                    	<% for(var i=35; i< 40; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+                </tr>
+                <tr>
+                    <td class="align-middle">14:30</td>
+                   	<% for(var i=40; i< 45; i++){ %>		
+			
+				<td>
+					<a href="https://localhost:3000/videochat/<%=schedule.videoCalls[i] %> >"><%=schedule.schedule[i]%></a>
+                    		</td>
+
+			<% } %>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

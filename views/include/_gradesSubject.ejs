@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+
+                <tr class="bg-light-gray">
+		    	<%console.log(kardex[0].firstPartialGrades)%>
+
+        	        	<th class="text-uppercase">Parcial</th>
+			<%kardex[0].firstPartialGrades.forEach((category,i)=>{%>
+				
+        	        	<th class="text-uppercase"><%=category.category%></th>
+
+			<%})%>
+		</tr>
+
+            </thead>
+
+            <tbody>
+	    
+
+
+
+		<tr>
+
+				<td class="align-middle">1er</td>
+	    		<%kardex[0].firstPartialGrades.forEach((subject,i)=>{%>
+				<td class="align-middle"><%=subject.grade%></td>
+			<%})%>
+                </tr>
+
+		<tr>
+
+				<td class="align-middle">2do</td>
+	    		<%kardex[0].secondPartialGrades.forEach((subject,i)=>{%>
+				<td class="align-middle"><%=subject.grade%></td>
+			<%})%>
+                </tr>
+		<tr>
+
+				<td class="align-middle">3er</td>
+	    		<%kardex[0].thirdPartialGrades.forEach((subject,i)=>{%>
+				<td class="align-middle"><%=subject.grade%></td>
+			<%})%>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

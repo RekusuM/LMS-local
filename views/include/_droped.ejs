@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="card mt-5">
+		<div class="card-body">
+
+			<div class="row align-items-start">
+        		<form action="api/drop/" method="POST" >
+			
+					<div class="col">
+        				<select class="form-select" id="userSelector"  name="register">
+						
+							<option value="" hidden>Seleccione un usuario</option>
+
+							<% for(var i=0; i< students.length; i++){ %>	
+									<option value="<%= students[i].registerNumber%>" > <%= students[i].registerNumber%></option>
+							<% } %>
+						</select>
+        		 	</div>
+			
+
+					<div class="col-12 ">
+ 	   					<button type="submit"  class="btn btn-primary" >Dar de baja</button>
+        			</div>
+				</form>
+        	</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="card mt-5">
+		<div class="card-body">
+
+			
+		<div class="row align-items-start">
+        		<form action="api/drop/temporal" method="POST" >
+			
+				<div class="col">
+        				<select class="form-select" id="userSelector"  name="register">
+						
+						<option value="" hidden>Seleccione un usuario</option>
+
+						<% for(var i=0; i< students.length; i++){ %>	
+								<option value="<%= students[i].registerNumber%>" > <%= students[i].registerNumber%></option>
+						<% } %>
+					</select>
+        		 	</div>
+			
+
+          			<input id="startDate" class="form-control" type="date" name="date">
+					<div class="col-12 ">
+ 	   						<button type="submit"  class="btn btn-primary" >Dar de baja de manera temporal</button>
+        			</div>
+			</form>
+        	</div>
+	</div>
+</div>
