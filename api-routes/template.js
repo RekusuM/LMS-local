@@ -35,7 +35,7 @@ router.post('/',async (req,res)=>{
 
 	
 
-	req.body.publicationId.forEach(async (publicationId,index)=>{
+		req.body.publicationId.forEach(async (publicationId,index)=>{
 		
 		const publication = await Publication.findById(publicationId)
 
@@ -84,7 +84,7 @@ router.post('/',async (req,res)=>{
 	try{
 
 		
-		res.status(200).redirect("/publicationsTeachers?publicationId="+req.body.templateCode)
+		res.redirect("/publicationsTeachers?publicationId="+req.body.templateCode)
 	}catch(err){
 		
 		res.json({ message : err })

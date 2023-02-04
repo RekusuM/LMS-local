@@ -81,7 +81,7 @@ router.get('/highschoolCertificate/:postulateId', async (req,res)=>{
 	try{
 		const postulateFile = await Postulates.findById(req.params.postulateId)
 		res.setHeader("Content-Type",postulateFile.certHighschool.contentType)	
-		res.setHeader("Content-Disposition","inline; filename=certificado.pdf")
+		res.setHeader("Content-Disposition","inline; filename=certificadoSecundaria.pdf")
 		res.send(postulateFile.certHighschool.data)
 	}catch(err){
 		res.json({ message : err })
@@ -92,7 +92,7 @@ router.get('/curp/:postulateId', async (req,res)=>{
 	try{
 		const postulateFile = await Postulates.findById(req.params.postulateId)
 		res.setHeader("Content-Type",postulateFile.curp.contentType)	
-		res.setHeader("Content-Disposition","inline; filename=certificado.pdf")
+		res.setHeader("Content-Disposition","inline; filename=curp.pdf")
 		res.send(postulateFile.curp.data)
 		console.log("entro")
 	}catch(err){
@@ -105,7 +105,7 @@ router.get('/antidoping/:postulateId', async (req,res)=>{
 		console.log("entro")
 		const postulateFile = await Postulates.findById(req.params.postulateId)
 		res.setHeader("Content-Type",postulateFile.antidoping.contentType)	
-		res.setHeader("Content-Disposition","inline; filename=certificado.pdf")
+		res.setHeader("Content-Disposition","inline; filename=antidoping.pdf")
 		res.send(postulateFile.antidoping.data)
 	}catch(err){
 		res.json({ message : err })
@@ -116,7 +116,7 @@ router.get('/birthdayCertificate/:postulateId', async (req,res)=>{
 	try{
 		const postulateFile = await Postulates.findById(req.params.postulateId)
 		res.setHeader("Content-Type",postulateFile.birthdayCert.contentType)	
-		res.setHeader("Content-Disposition","inline; filename=certificado.pdf")
+		res.setHeader("Content-Disposition","inline; filename=certificadoDeNacimiento.pdf")
 		res.send(postulateFile.birthdayCert.data)
 	}catch(err){
 		res.json({ message : err })
